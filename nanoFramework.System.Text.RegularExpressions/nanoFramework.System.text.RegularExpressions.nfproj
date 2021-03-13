@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
+  </PropertyGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>446675df-9d2a-4045-9534-fbeaee1fb388</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>nanoFramework.System.text.RegularExpressions</RootNamespace>
+    <AssemblyName>nanoFramework.System.text.RegularExpressions</AssemblyName>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
+  <ItemGroup>
+    <Compile Include="Classes\Capture.cs" />
+    <Compile Include="Classes\CharacterClass.cs" />
+    <Compile Include="Classes\CharacterRange.cs" />
+    <Compile Include="Classes\Group.cs" />
+    <Compile Include="Classes\Match.cs" />
+    <Compile Include="Classes\MatchEvaluator.cs" />
+    <Compile Include="Classes\Regex.cs" />
+    <Compile Include="Classes\RegexProgram.cs" />
+    <Compile Include="Classes\StreamCharacterIterator.cs" />
+    <Compile Include="Classes\StringCharacterIterator.cs" />
+    <Compile Include="Collections\CaptureCollection.cs" />
+    <Compile Include="Collections\CaptureEnumerator.cs" />
+    <Compile Include="Collections\GroupCollection.cs" />
+    <Compile Include="Collections\MatchCollection.cs" />
+    <Compile Include="Collections\MatchEnumerator.cs" />
+    <Compile Include="Collections\GroupEnumerator.cs" />
+    <Compile Include="Compiler\RegexCompiler.cs" />
+    <Compile Include="Enumerations\EscapeCode.cs" />
+    <Compile Include="Enumerations\OpCode.cs" />
+    <Compile Include="Enumerations\POSIXCharacterClass.cs" />
+    <Compile Include="Enumerations\ProgramOptions.cs" />
+    <Compile Include="Enumerations\RegexOptions.cs" />
+    <Compile Include="Enumerations\ReplaceOptions.cs" />
+    <Compile Include="Enumerations\SpecialEscape.cs" />
+    <Compile Include="Exceptions\RegexExecutionTimeException.cs" />
+    <Compile Include="Exceptions\SyntaxException.cs" />
+    <Compile Include="Interfaces\ICharacterIterator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\nanoFramework.System.IO\nanoFramework.System.IO.nfproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.10.1-preview.11\lib\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="nanoFramework.System.Collections">
+      <HintPath>..\packages\nanoFramework.System.Collections.1.2.0-preview.29\lib\nanoFramework.System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="nanoFramework.System.Text">
+      <HintPath>..\packages\nanoFramework.System.Text.1.1.1-preview.29\lib\nanoFramework.System.Text.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
+  <ProjectExtensions>
+    <ProjectCapabilities>
+      <ProjectConfigurationsDeclaredAsItems />
+    </ProjectCapabilities>
+  </ProjectExtensions>
+</Project>

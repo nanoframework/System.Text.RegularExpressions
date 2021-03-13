@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "System.text.RegularExpressions", "nanoFramework.System.Text.RegularExpressions\nanoFramework.System.Text.RegularExpressions.nfproj", "{446675DF-9D2A-4045-9534-FBEAEE1FB388}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "System.IO", "nanoFramework.System.IO\nanoFramework.System.IO.nfproj", "{D38729B0-6801-4FE3-9D4B-7D91796C4BD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4BFDAC02-BE47-41CA-8E44-70C68CB30056}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestRegex", "Tests\NFUnitTestRegex\NFUnitTestRegex.nfproj", "{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestMemoryStream", "Tests\NFUnitTestMemoryStream\NFUnitTestMemoryStream.nfproj", "{F4FAA71B-C931-486B-92EF-F377A6DF5205}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEAC81E9-1F6B-4894-843A-B999D9B6DE2D}"
+	ProjectSection(SolutionItems) = preProject
+		nanoFramework.System.Text.RegularExpressions.nuspec = nanoFramework.System.Text.RegularExpressions.nuspec
+		NuGet.Config = NuGet.Config
+		version.json = version.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{446675DF-9D2A-4045-9534-FBEAEE1FB388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446675DF-9D2A-4045-9534-FBEAEE1FB388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{446675DF-9D2A-4045-9534-FBEAEE1FB388}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{446675DF-9D2A-4045-9534-FBEAEE1FB388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446675DF-9D2A-4045-9534-FBEAEE1FB388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{446675DF-9D2A-4045-9534-FBEAEE1FB388}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D38729B0-6801-4FE3-9D4B-7D91796C4BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38729B0-6801-4FE3-9D4B-7D91796C4BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38729B0-6801-4FE3-9D4B-7D91796C4BD2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D38729B0-6801-4FE3-9D4B-7D91796C4BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D38729B0-6801-4FE3-9D4B-7D91796C4BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D38729B0-6801-4FE3-9D4B-7D91796C4BD2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F4FAA71B-C931-486B-92EF-F377A6DF5205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4FAA71B-C931-486B-92EF-F377A6DF5205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4FAA71B-C931-486B-92EF-F377A6DF5205}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F4FAA71B-C931-486B-92EF-F377A6DF5205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4FAA71B-C931-486B-92EF-F377A6DF5205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4FAA71B-C931-486B-92EF-F377A6DF5205}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F87A42C0-7BCF-466E-B344-B0EE08E1CAB2} = {4BFDAC02-BE47-41CA-8E44-70C68CB30056}
+		{F4FAA71B-C931-486B-92EF-F377A6DF5205} = {4BFDAC02-BE47-41CA-8E44-70C68CB30056}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43B4C48C-B80C-426B-97F3-D28CF4B4E563}
+	EndGlobalSection
+EndGlobal
