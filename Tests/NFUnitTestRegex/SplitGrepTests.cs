@@ -17,8 +17,6 @@ namespace NFUnitTestRegex
         [TestMethod]
         public void RegExpTest_1_Split_Test_0()
         {
-            bool testResult = false;
-
             string[] expectedResults;
 
             string[] acutalResults;
