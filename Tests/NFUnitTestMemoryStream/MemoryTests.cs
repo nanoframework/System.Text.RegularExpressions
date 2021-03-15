@@ -19,13 +19,13 @@ namespace NFUnitTestMemoryStream
             Assert.True(ms.CanWrite);
             Assert.Equal(0, ms.Length);
             Assert.Equal(0, ms.Position);
-            Assert.Trows(typeof(ArgumentNullException), () => { ms.Read(null, 0, 0); });
+            Assert.Throws(typeof(ArgumentNullException), () => { ms.Read(null, 0, 0); });
             ms.WriteByte(42);
             ms.Position = 0;
             Assert.Equal(42, ms.ReadByte());
             Assert.Equal(-1, ms.ReadByte());
             ms.Dispose();
-            Assert.Trows(typeof(ObjectDisposedException), () => { ms.ReadByte(); });
+            Assert.Throws(typeof(ObjectDisposedException), () => { ms.ReadByte(); });
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace NFUnitTestMemoryStream
             Assert.Equal(9, ms.ReadByte());
             Assert.Equal(10, ms.Position);
             // It's a fixed buffer, we can't expand it
-            Assert.Trows(typeof(NotSupportedException), () => { ms.WriteByte(10); });
+            Assert.Throws(typeof(NotSupportedException), () => { ms.WriteByte(10); });
             // Let's check the sub buffer
             Assert.Equal(array[2], subArray[0]);
             Assert.Equal(array[6], subArray[4]);
@@ -74,13 +74,13 @@ namespace NFUnitTestMemoryStream
             Assert.Equal(8, ms.Position);
             ms.Seek(1, SeekOrigin.Current);
             Assert.Equal(9, ms.Position);
-            Assert.Trows(typeof(IOException), () => { ms.Seek(1, SeekOrigin.End); });
-            Assert.Trows(typeof(IOException), () => { ms.Seek(-11, SeekOrigin.End); });
-            Assert.Trows(typeof(IOException), () => { ms.Seek(-1, SeekOrigin.Begin); });
-            Assert.Trows(typeof(IOException), () => { ms.Seek(11, SeekOrigin.Begin); });
+            Assert.Throws(typeof(IOException), () => { ms.Seek(1, SeekOrigin.End); });
+            Assert.Throws(typeof(IOException), () => { ms.Seek(-11, SeekOrigin.End); });
+            Assert.Throws(typeof(IOException), () => { ms.Seek(-1, SeekOrigin.Begin); });
+            Assert.Throws(typeof(IOException), () => { ms.Seek(11, SeekOrigin.Begin); });
             ms.Position = 0;
-            Assert.Trows(typeof(IOException), () => { ms.Seek(-1, SeekOrigin.Current); });
-            Assert.Trows(typeof(IOException), () => { ms.Seek(11, SeekOrigin.Current); });
+            Assert.Throws(typeof(IOException), () => { ms.Seek(-1, SeekOrigin.Current); });
+            Assert.Throws(typeof(IOException), () => { ms.Seek(11, SeekOrigin.Current); });
         }
 
         [TestMethod]
@@ -98,9 +98,9 @@ namespace NFUnitTestMemoryStream
             Assert.Equal(10, ms.ReadByte());
             ms.Position = 6;
             Assert.Equal(14, ms.ReadByte());
-            Assert.Trows(typeof(ArgumentNullException), () => { ms.Write(null, 0, 0); });
-            Assert.Trows(typeof(ArgumentException), () => { ms.Write(new byte[0], 1, 0); });
-            Assert.Trows(typeof(ArgumentOutOfRangeException), () => { ms.Write(new byte[0], 0, -1); });
+            Assert.Throws(typeof(ArgumentNullException), () => { ms.Write(null, 0, 0); });
+            Assert.Throws(typeof(ArgumentException), () => { ms.Write(new byte[0], 1, 0); });
+            Assert.Throws(typeof(ArgumentOutOfRangeException), () => { ms.Write(new byte[0], 0, -1); });
         }
 
         [TestMethod]
