@@ -39,6 +39,8 @@ jobs:
   - template: azure-pipelines-templates/class-lib-build.yml@templates
     parameters:
       sonarCloudProject: 'nanoframework_lib-nanoFramework.System.Text.RegularExpressions'
+      runUnitTests: true
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestRegex\nano.runsettings'
 
 ##############################
 - job: Update_Dependencies
