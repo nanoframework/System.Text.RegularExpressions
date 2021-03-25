@@ -1,2 +1,1 @@
 **/nanoFramework.System.Net.RegularExpressions.*
-**/nanoFramework.System.IO.*
