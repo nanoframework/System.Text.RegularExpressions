@@ -9,7 +9,7 @@ using System.Collections;
 namespace System.Text.RegularExpressions
 {    
     [Serializable]
-    public class GroupCollection : ICollection, IEnumerable
+    public class GroupCollection : ICollection
     {
         // Fields
         internal Hashtable _captureMap;
@@ -119,7 +119,7 @@ namespace System.Text.RegularExpressions
         /// <summary>
         /// Gets the group element at a specific position.
         /// </summary>
-        /// <param name="groupnum">The position</param>
+        /// <param name="groupname">The position</param>
         /// <returns>The group element</returns>
         public Group this[string groupname]
         {

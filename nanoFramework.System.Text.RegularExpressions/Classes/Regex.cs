@@ -384,23 +384,23 @@ namespace System.Text.RegularExpressions
         #endregion
 
         // Parenthesized subexpressions
-        internal int matchCount;                     // Number of subexpressions matched (num open parens + 1)
-        internal int start0;                         // Cache of start[0]
-        internal int end0;                           // Cache of end[0]
-        internal int start1;                         // Cache of start[1]
-        internal int end1;                           // Cache of end[1]
-        internal int start2;                         // Cache of start[2]
-        internal int end2;                           // Cache of end[2]
-        internal int[] starts;                       // Lazy-alloced array of sub-expression starts
-        internal int[] ends;                         // Lazy-alloced array of sub-expression ends
+        private int _matchCount;                     // Number of subexpressions matched (num open parens + 1)
+        private int _start0;                         // Cache of start[0]
+        private int _end0;                           // Cache of end[0]
+        private int _start1;                         // Cache of start[1]
+        private int _end1;                           // Cache of end[1]
+        private int _start2;                         // Cache of start[2]
+        private int _end2;                           // Cache of end[2]
+        private int[] _starts;                       // Lazy-alloced array of sub-expression starts
+        private int[] _ends;                         // Lazy-alloced array of sub-expression ends
 
         // Backreferences
-        internal int[] startBackref;                 // Lazy-alloced array of backref starts
-        internal int[] endBackref;                   // Lazy-alloced array of backref ends        
+        private int[] _startBackref;                 // Lazy-alloced array of backref starts
+        private int[] _endBackref;                   // Lazy-alloced array of backref ends        
 
         //Compilation Cache
-        static internal int cacheSize = 25;
-        static internal Stack regexpCache = new Stack();
+        private static int _cacheSize = 25;
+        private static readonly Stack _regexpCache = new Stack();
 
         #endregion
 
@@ -413,13 +413,13 @@ namespace System.Text.RegularExpressions
         {
             get
             {
-                return cacheSize;
+                return _cacheSize;
             }
 
             set
             {
                 //If the value is 0 then we must clear the cache
-                if ((cacheSize = value) <= 0)
+                if ((_cacheSize = value) <= 0)
                 {
                     Regex.Cache.Clear();
                 }
@@ -434,9 +434,9 @@ namespace System.Text.RegularExpressions
         {
             get
             {
-                lock (regexpCache.SyncRoot)
+                lock (_regexpCache.SyncRoot)
                 {
-                    return regexpCache;
+                    return _regexpCache;
                 }
             }
         }
@@ -604,25 +604,25 @@ namespace System.Text.RegularExpressions
         /// <param name="i">i Index in input array</param>
         void SetSubExpressionStart(int which, int i)
         {
-            if (which < matchCount)
+            if (which < _matchCount)
             {
                 switch (which)
                 {
                     case 0:
-                        start0 = i;
+                        _start0 = i;
                         break;
                     case 1:
-                        start1 = i;
+                        _start1 = i;
                         break;
                     case 2:
-                        start2 = i;
+                        _start2 = i;
                         break;
                     default:
-                        if (starts == null)
+                        if (_starts == null)
                         {
                             AllocateSubExpressions();
                         }
-                        starts[which] = i;
+                        _starts[which] = i;
                         break;
                 }
             }
@@ -635,25 +635,25 @@ namespace System.Text.RegularExpressions
         /// <param name="i">Index in input ICharacterStream</param>
         void SetSubExpressionEnd(int which, int i)
         {
-            if (which < matchCount)
+            if (which < _matchCount)
             {
                 switch (which)
                 {
                     case 0:
-                        end0 = i;
+                        _end0 = i;
                         break;
                     case 1:
-                        end1 = i;
+                        _end1 = i;
                         break;
                     case 2:
-                        end2 = i;
+                        _end2 = i;
                         break;
                     default:
-                        if (ends == null)
+                        if (_ends == null)
                         {
                             AllocateSubExpressions();
                         }
-                        ends[which] = i;
+                        _ends[which] = i;
                         break;
                 }
             }
@@ -676,11 +676,11 @@ namespace System.Text.RegularExpressions
         void AllocateSubExpressions()
         {
             // Allocate arrays for subexpressions
-            starts = new int[maxMatches];
-            ends = new int[maxMatches];
+            _starts = new int[maxMatches];
+            _ends = new int[maxMatches];
 
             // Set sub-expression pointers to invalid values
-            for (int i = 0; i < maxMatches; ++i) starts[i] = ends[i] = -1;
+            for (int i = 0; i < maxMatches; ++i) _starts[i] = _ends[i] = -1;
         }
 
         /// <summary>
@@ -693,7 +693,7 @@ namespace System.Text.RegularExpressions
             int start;
             //If the subexpression is present then move the start index to the start of the subexpression
             //If the result of moving the startindex is positive then return the range
-            if (which < matchCount && (start = GroupStart(which)) >= 0) return search.Range(start, GroupEnd(which));
+            if (which < _matchCount && (start = GroupStart(which)) >= 0) return search.Range(start, GroupEnd(which));
             //return null otherwise
             return null;
         }
@@ -705,19 +705,19 @@ namespace System.Text.RegularExpressions
         /// <returns>String index</returns>
         internal int GroupStart(int which)
         {
-            if (which < matchCount)
+            if (which < _matchCount)
             {
                 switch (which)
                 {
                     case 0:
-                        return start0;
+                        return _start0;
                     case 1:
-                        return start1;
+                        return _start1;
                     case 2:
-                        return start2;
+                        return _start2;
                     default:
-                        if (starts == null) AllocateSubExpressions();
-                        return starts[which];
+                        if (_starts == null) AllocateSubExpressions();
+                        return _starts[which];
                 }
             }
 
@@ -731,23 +731,23 @@ namespace System.Text.RegularExpressions
         /// <returns>index in input ICharacterStream</returns>
         internal int GroupEnd(int which)
         {
-            if (which < matchCount)
+            if (which < _matchCount)
             {
                 switch (which)
                 {
                     case 0:
-                        return end0;
+                        return _end0;
                     case 1:
-                        return end1;
+                        return _end1;
                     case 2:
-                        return end2;
+                        return _end2;
                     default:
-                        if (ends == null)
+                        if (_ends == null)
                         {
                             AllocateSubExpressions();
                         }
 
-                        return ends[which];
+                        return _ends[which];
                 }
             }
 
@@ -761,7 +761,7 @@ namespace System.Text.RegularExpressions
         /// <returns>The length of the subexpression if it exists otherwise -1</returns>
         internal int GroupLength(int which)
         {
-            if (which < matchCount)
+            if (which < _matchCount)
             {
                 return GroupEnd(which) - GroupStart(which);
             }
@@ -946,14 +946,14 @@ namespace System.Text.RegularExpressions
                         // Match subexpression
                         if ((program.Flags & ProgramOptions.HasBackrefrence) != 0)
                         {
-                            startBackref[opdata] = idx;
+                            _startBackref[opdata] = idx;
                         }
                         if ((idxNew = MatchNodes(next, MaximumNodes, idx)) != -1)
                         {
                             // Increase valid paren count
-                            if (opdata >= matchCount)
+                            if (opdata >= _matchCount)
                             {
-                                matchCount = opdata + 1;
+                                _matchCount = opdata + 1;
                             }
 
                             // Don't set paren if already set later on
@@ -972,14 +972,14 @@ namespace System.Text.RegularExpressions
                         // Done matching subexpression
                         if ((program.Flags & ProgramOptions.HasBackrefrence) != 0)
                         {
-                            endBackref[opdata] = idx;
+                            _endBackref[opdata] = idx;
                         }
                         if ((idxNew = MatchNodes(next, MaximumNodes, idx)) != -1)
                         {
                             // Increase valid paren count
-                            if (opdata >= matchCount)
+                            if (opdata >= _matchCount)
                             {
-                                matchCount = opdata + 1;
+                                _matchCount = opdata + 1;
                             }
 
                             // Don't set paren if already set later on
@@ -995,8 +995,8 @@ namespace System.Text.RegularExpressions
                     #region BackRef
                     case OpCode.BackRef:
                         // Get the start and end of the backref
-                        int s = startBackref[opdata];
-                        int e = endBackref[opdata];
+                        int s = _startBackref[opdata];
+                        int e = _endBackref[opdata];
 
                         // We don't know the backref yet
                         if (s == -1 || e == -1)
@@ -1261,7 +1261,7 @@ namespace System.Text.RegularExpressions
                                 {
                                     case EscapeCode.Alphanumeric:
                                     case EscapeCode.NonAlphanumeric:
-                                        if (!((CharacterClass.IsLetterOrDigit(ref cc) || cc == '_') == (opdata == EscapeCode.Alphanumeric)))
+                                        if (((CharacterClass.IsLetterOrDigit(ref cc) || cc == '_') != (opdata == EscapeCode.Alphanumeric)))
                                         {
                                             return -1;
                                         }
@@ -1269,7 +1269,7 @@ namespace System.Text.RegularExpressions
 
                                     case EscapeCode.Digit:
                                     case EscapeCode.NonDigit:
-                                        if (!(CharacterClass.IsDigit(ref cc) == (opdata == EscapeCode.Digit)))
+                                        if ((CharacterClass.IsDigit(ref cc) != (opdata == EscapeCode.Digit)))
                                         {
                                             return -1;
                                         }
@@ -1277,7 +1277,7 @@ namespace System.Text.RegularExpressions
 
                                     case EscapeCode.Whitespace:
                                     case EscapeCode.NonWhitespace:
-                                        if (!(CharacterClass.IsWhitespace(ref cc) == (opdata == EscapeCode.Whitespace)))
+                                        if ((CharacterClass.IsWhitespace(ref cc) != (opdata == EscapeCode.Whitespace)))
                                         {
                                             return -1;
                                         }
@@ -1457,19 +1457,19 @@ namespace System.Text.RegularExpressions
         bool MatchAt(int i)
         {
             // Initialize start pointer, paren cache and paren count
-            start0 = -1;
-            end0 = -1;
-            start1 = -1;
-            end1 = -1;
-            start2 = -1;
-            end2 = -1;
-            starts = null;
-            ends = null;
-            matchCount = 1;
+            _start0 = -1;
+            _end0 = -1;
+            _start1 = -1;
+            _end1 = -1;
+            _start2 = -1;
+            _end2 = -1;
+            _starts = null;
+            _ends = null;
+            _matchCount = 1;
             SetSubExpressionStart(0, i);
 
             // Allocate backref arrays (unless optimizations indicate otherwise)
-            if ((program.Flags & ProgramOptions.HasBackrefrence) != 0) startBackref = endBackref = new int[maxMatches];
+            if ((program.Flags & ProgramOptions.HasBackrefrence) != 0) _startBackref = _endBackref = new int[maxMatches];
 
             // Match against string
             int idx;
@@ -1480,7 +1480,7 @@ namespace System.Text.RegularExpressions
             }
 
             // Didn't match
-            matchCount = 0;
+            _matchCount = 0;
             return false;
         }
 
@@ -1498,9 +1498,10 @@ namespace System.Text.RegularExpressions
         /// string. This happens when the very first character of input string is
         /// matched by the pattern.</p>
         /// </summary>
-        /// <param name="s">String to split on this regular exression</param>
-        /// <param name="maxMatches">The maximum number of matches to split</param>
-        /// <param name="start">The offset in the string to start at</param>
+        /// <param name="s">String to split on this regular expression.</param>
+        /// <param name="maxMatches">The maximum number of matches to split.</param>
+        /// <param name="start">The offset in the string to start at.</param>
+        /// <param name="length">The maximum length in the string that should parsed.</param>
         /// <returns>Array of strings</returns>
         public String[] Split(String s, int maxMatches, int start, int length)
         {
@@ -1524,10 +1525,10 @@ namespace System.Text.RegularExpressions
                 ++matchCount;
 
                 // Get start of match
-                start = start0;
+                start = _start0;
 
                 // Get end of match
-                int newpos = end0;
+                int newpos = _end0;
 
                 // Check if no progress was made
                 if (newpos == pos)
@@ -1620,7 +1621,7 @@ namespace System.Text.RegularExpressions
         /// resulting String returned by subst would be "-foo-garply-wacky-".
         /// <p>
         /// It is also possible to reference the contents of a parenthesized expression
-        /// with $0, $1, ... $9. A regular expression of "http://[\\.\\w\\-\\?/~_@&=%]+",
+        /// with $0, $1, ... $9. A regular expression of "http://[\\.\\w\\-\\?/~_@&#38;=%]+",
         /// a String to substituteIn of "visit us: http://www.apache.org!" and the
         /// substitution String "&lt;a href=\"$0\"&gt;$0&lt;/a&gt;", the resulting String
         /// returned by subst would be
@@ -1657,7 +1658,7 @@ namespace System.Text.RegularExpressions
             {
                 // Append string before match
                 //ret.Append(StringExtensions.Range(ref substituteIn, searchPosition, start0));
-                ret.Append(substituteIn.Substring(searchPosition, start0 - searchPosition));
+                ret.Append(substituteIn.Substring(searchPosition, _start0 - searchPosition));
 
                 if (backRef)
                 {
@@ -1703,7 +1704,7 @@ namespace System.Text.RegularExpressions
                 else ret.Append(substitution);
 
                 // Move forward, skipping past match
-                int newpos = end0;
+                int newpos = _end0;
 
                 // We always want to make progress!
                 if (newpos == searchPosition) ++newpos;
@@ -1980,9 +1981,9 @@ namespace System.Text.RegularExpressions
             Match result = RegularExpressions.Match.Empty;
             if (IsMatch(input, beginning))
             {
-                result = new Match(this, matchCount, input, start0, end0 - start0, beginning);
+                result = new Match(this, _matchCount, input, _start0, _end0 - _start0, beginning);
                 //Must call AddMatch to ensure the start and ends are allocated to result.groups[i].caps
-                for (int i = 0; i < matchCount; ++i)
+                for (int i = 0; i < _matchCount; ++i)
                 {
                     int start = GroupStart(i), end = GroupEnd(i), len = end - start;
                     result.AddMatch(i, start, len);
@@ -1993,7 +1994,7 @@ namespace System.Text.RegularExpressions
                 result._capcount = result._matchcount[0];
                 //Set the position of the result which is the end of the first subexpression
                 //subsequent matches will proceed from this index
-                result._textpos = end0;
+                result._textpos = _end0;
             }
 
             return result;
