@@ -12,11 +12,11 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>System.text.RegularExpressions</RootNamespace>
-    <AssemblyName>System.text.RegularExpressions</AssemblyName>
+    <RootNamespace>System.Text.RegularExpressions</RootNamespace>
+    <AssemblyName>System.Text.RegularExpressions</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
-    <DocumentationFile>bin\$(Configuration)\System.text.RegularExpressions.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\System.Text.RegularExpressions.xml</DocumentationFile>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
