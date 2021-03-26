@@ -30,7 +30,7 @@ jobs:
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
     nugetPackageName: 'nanoFramework.System.Text.RegularExpressions'
-    repoName: 'lib-nanoFramework.System.Text.RegularExpressions'
+    repoName: 'nanoFramework.System.Text.RegularExpressions'
 
   steps:
 
