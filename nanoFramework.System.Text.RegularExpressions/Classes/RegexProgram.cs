@@ -129,7 +129,7 @@ namespace System.Text.RegularExpressions
         }
 
         /// <summary>
-        /// Optomization and Matching flags
+        /// Optimization and Matching flags
         /// </summary>
         internal ProgramOptions Flags
         {

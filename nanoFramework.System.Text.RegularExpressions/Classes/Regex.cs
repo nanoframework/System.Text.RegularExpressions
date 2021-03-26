@@ -418,7 +418,7 @@ namespace System.Text.RegularExpressions
 
             set
             {
-                ///If the value is 0 then we must clear the cache
+                //If the value is 0 then we must clear the cache
                 if ((cacheSize = value) <= 0)
                 {
                     Regex.Cache.Clear();
@@ -1555,6 +1555,7 @@ namespace System.Text.RegularExpressions
             return ret;
         }
 
+        ///<summary>
         /// Splits a string into an array of strings on regular expression boundaries.
         /// This function works the same way as the Perl function of the same name.
         /// Given a regular expression of "[ab]+" and a string to split of
@@ -1572,6 +1573,7 @@ namespace System.Text.RegularExpressions
             return Split(s, maxMatches, 0, s.Length);
         }
 
+        ///<summary>
         /// Splits a string into an array of strings on regular expression boundaries.
         /// This function works the same way as the Perl function of the same name.
         /// Given a regular expression of "[ab]+" and a string to split of
@@ -1623,7 +1625,7 @@ namespace System.Text.RegularExpressions
         /// substitution String "&lt;a href=\"$0\"&gt;$0&lt;/a&gt;", the resulting String
         /// returned by subst would be
         /// "visit us: &lt;a href=\"http://www.apache.org\"&gt;http://www.apache.org&lt;/a&gt;!".
-        /// <p>
+        /// </p>
         /// <i>Note:</i> $0 represents the whole match.
         /// </summary>
         /// <param name="substituteIn">String to substitute within</param>
@@ -2038,7 +2040,7 @@ namespace System.Text.RegularExpressions
         /// <returns>The result of splitting the input string against the Regexp</returns>
         public static string[] Split(Regex regex, string input, int count, int startat)
         {
-            ///Sanity checks
+            //Sanity checks
             if (count < 0)
             {
                 throw new ArgumentOutOfRangeException("count");
@@ -2130,7 +2132,7 @@ namespace System.Text.RegularExpressions
         /// Splits the input string at the positions defined by a specified regular expression pattern. Specified options modify the matching operation.
         /// </summary>
         /// <param name="pattern">The pattern to match against</param>
-        /// <param name="options">The options to utilize during matching</param
+        /// <param name="options">The options to utilize during matching</param>
         /// <param name="split">The string to split</param>
         /// <param name="start">the start position in the input</param>
         /// <param name="maxOccurances">the maximum amount of splits to perform</param>

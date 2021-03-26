@@ -7,8 +7,9 @@
 namespace System.Text.RegularExpressions
 {
     /// <summary>
-    /// Program Optomization Flags
+    /// Program optimization Flags
     /// </summary>
+    [Flags]
     internal enum ProgramOptions
     {
         None = 0,

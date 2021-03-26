@@ -47,16 +47,23 @@ namespace NFUnitTestRegex
         [TestMethod]
         public void RegExpTest_7_Match_Test_01()
         {
-            //MSDN Test from http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.match.aspx
+            // MSDN Test from http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.match.aspx
             // Search for a pattern that is not found in the input string.
             string pattern = "dog";
             string input = "The cat saw the other cats playing in the back yard.";
+
             Match match = Regex.Match(input, pattern);
+
             if (match.Success)
+            {
                 // Report position as a one-based integer.
-                Debug.WriteLine("'" + match.Value + "' was found at position " + match.Index + 1 + " in '" + input + "'.");
+                Debug.WriteLine($"'{match.Value}' was found at position {match.Index} in '{input}'.");
+            }
             else
-                Debug.WriteLine("The pattern '" + pattern + "' was not found in '{" + input + "}'.");
+            {
+                Debug.WriteLine($"The pattern '{pattern}' was not found in '{input}'.");
+            }
+
             Assert.False(match.Success);
         }
 
@@ -64,14 +71,13 @@ namespace NFUnitTestRegex
         public void RegExpTest_8_MatchCollection_Test_1()
         {
 
-            /* http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.matchcollection.aspx
+            // http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.matchcollection.aspx
             // The example produces the following output to the console:
             //       3 matches found in:
             //          The the quick brown fox  fox jumped over the lazy dog dog.
             //       'The' repeated at positions 0 and 4
             //       'fox' repeated at positions 20 and 25
             //       'dog' repeated at positions 50 and 54
-            */
 
             // NOTE: this currently fails
 
@@ -82,6 +88,7 @@ namespace NFUnitTestRegex
             // Define a test string.        
             string text = "The the quick brown fox  fox jumped over the lazy dog dog.";
             Debug.WriteLine(text);
+
             // Find matches.
             MatchCollection matches = rx.Matches(text);
 
