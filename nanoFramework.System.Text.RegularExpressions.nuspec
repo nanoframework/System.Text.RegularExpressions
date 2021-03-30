@@ -24,7 +24,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.dll" target="lib\ystem.Text.RegularExpressions.dll" />
+    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.dll" target="lib\System.Text.RegularExpressions.dll" />
     <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pdb" target="lib\System.Text.RegularExpressions.pdb" />
     <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pdbx" target="lib\System.Text.RegularExpressions.pdbx" />
     <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pe" target="lib\System.Text.RegularExpressions.pe" />
