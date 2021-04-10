@@ -1631,10 +1631,8 @@ namespace System.Text.RegularExpressions
         /// </summary>
         /// <param name="substituteIn">String to substitute within</param>
         /// <param name="substitution">String to substitute for matches of this regular expression</param>
-        /// <param name="flags"> One or more bitwise flags from ReplaceOptions.  If the ReplaceFirstOnly
-        /// flag bit is set, only the first occurrence of this regular expression is replaced.
-        /// If the bit is not set (ReplaceAll), all occurrences of this pattern will be
-        /// replaced. If the flag ReplaceBackrefrences is set, all backreferences will be processed.</param>
+        /// <param name="maxOccurances">Maximum number of occurrences</param>
+        /// <param name="start">Start index</param>
         /// <returns>The string substituteIn with zero or more occurrences of the current
         /// regular expression replaced with the substitution String (if this regular
         /// expression object doesn't match at any position, the original String is returned
@@ -1761,6 +1759,8 @@ namespace System.Text.RegularExpressions
         /// aaaab], the array of Strings returned by grep would be [aab, aaaab].
         /// </summary>
         /// <param name="search">Array of string to search</param>
+        /// <param name="start">Start index</param>
+        /// <param name="length">The length</param>
         /// <returns>Array of Strings whose value matches this regular expression</returns>
         public string[] GetMatches(string[] search, int start, int length)
         {
@@ -1865,9 +1865,10 @@ namespace System.Text.RegularExpressions
         /// <summary>
         /// Adds a match to a Match
         /// </summary>
-        /// <param name="capnum"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
+        /// <param name="match">The match</param>
+        /// <param name="capnum">The capture number</param>
+        /// <param name="start">The start index</param>
+        /// <param name="end">The end index</param>
         internal void Capture(Match match, int capnum, int start, int end)
         {
             if (end < start)

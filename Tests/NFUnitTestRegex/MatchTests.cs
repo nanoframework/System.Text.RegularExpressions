@@ -70,8 +70,8 @@ namespace NFUnitTestRegex
         [TestMethod]
         public void RegExpTest_8_MatchCollection_Test_1()
         {
-            // TODO fix this
-            // seems that it can't handle named groups
+            // This is an unsupported scenario in this parser.
+            // ?<word> is not supported
 
             //// http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.matchcollection.aspx
             //// The example produces the following output to the console:

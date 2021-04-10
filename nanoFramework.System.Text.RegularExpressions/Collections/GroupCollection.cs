@@ -7,7 +7,10 @@
 using System.Collections;
 
 namespace System.Text.RegularExpressions
-{    
+{   
+    /// <summary>
+    /// Group Collection class
+    /// </summary>
     [Serializable]
     public class GroupCollection : ICollection
     {
