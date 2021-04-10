@@ -105,6 +105,26 @@ if (regex.IsMatch("\nabc"))
 // abc found!
 ```
 
+## Validated regular expressions
+
+You'll find in the tests some regular expressions used. Those can be useful:
+
+- email addresses: `([\w\d_.\-]+)@([\d\w\.\-]+)\.([\w\.]{2,5})`
+- http(s) URL: `(https?:\/\/)([\da-z-._]+)/?([\/\da-z.-]*)` (limitation: URL has to finish with a / to be properly extracted, this is a bug into our engine, it works perfectly with the expression between ^ and $)
+- MD5: `[a-f0-9]{32}`
+- SHA256: `[A-Fa-f0-9]{64}`
+- Simple XML tag: `<tag>[^<]*</tag>`
+- GUID: `[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?`
+- Date time like `2021-04-10 18:08:42`: `(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})`
+
+## Known limitations
+
+This parser is a simple one, some of those elements are not supported:
+
+- Expressions like `(?<word>\w+)` will not work. While groups are supported, the `?` in front of a named group or element is not supported.
+- For some characters, when using the escaped version like `\.` you may encounter issues, just use `.` instead.
+- Sometimes the order of the characters may have an impact. If you are in this case, try to change the order in a character class like `[a-z-._]`
+
 ## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
