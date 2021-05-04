@@ -41,28 +41,6 @@ jobs:
       sonarCloudProject: 'nanoframework_lib-nanoFramework.System.Text.RegularExpressions'
       runUnitTests: true
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestRegex\nano.runsettings'
-
-##############################
-- job: Update_Dependents
-  condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['StartReleaseCandidate'], 'false') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'), eq(variables['StartReleaseCandidate'], 'false') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
-
-  dependsOn:
-  - Build_Library
-
-  pool:
-    vmImage: 'VS2017-Win2016'
-
-  variables:
-    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-
-  steps:
-
-  - checkout: none
-
-  - task: NuGetToolInstaller@0
-    inputs:
-      versionSpec: '5.8.0'
-    displayName: 'Install specific version of NuGet'
   
 ##################################
 # report build failure to Discord
@@ -70,11 +48,10 @@ jobs:
 
   dependsOn:
   - Build_Library
-  - Update_Dependents
   condition: or( failed('Build_Library'), failed('Update_Dependents'))
 
   pool:
-    vmImage: 'VS2017-Win2016'
+    vmImage: 'windows-2019'
   steps:
 
   - checkout: self
