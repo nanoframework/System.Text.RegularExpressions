@@ -19,7 +19,7 @@
     <summary>System.Text.RegularExpressions assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf nanoFramework.System.Text.RegularExpressions</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.10.1-preview.11" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.10.5" />
     </dependencies>
   </metadata>
   <files>
@@ -28,7 +28,6 @@
     <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pdbx" target="lib\System.Text.RegularExpressions.pdbx" />
     <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pe" target="lib\System.Text.RegularExpressions.pe" />
     <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.xml" target="lib\System.Text.RegularExpressions.xml" />
-    
     <file src="assets\readme.txt" target="" />
     <file src="assets\nf-logo.png" target="images" />
     <file src="LICENSE.md" target="" />
