@@ -1,20 +1,32 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/nanoFramework.System.Text.RegularExpressions/tree/HEAD)
+## [v1.0.0-preview.33](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.0-preview.33) (2021-07-16)
 
-[Full Changelog](https://github.com/nanoframework/nanoFramework.System.Text.RegularExpressions/compare/v1.0.0-preview.22...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.0-preview.28...v1.0.0-preview.33)
+
+**Documentation and other chores:**
+
+- Update 4 nuget dependencies [\#2](https://github.com/nanoframework/System.Text.RegularExpressions/pull/2)
+
+## [v1.0.0-preview.28](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.0-preview.28) (2021-05-04)
+
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.0-preview.24...v1.0.0-preview.28)
+
+## [v1.0.0-preview.24](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.0-preview.24) (2021-04-10)
+
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.0-preview.22...v1.0.0-preview.24)
 
 **Implemented enhancements:**
 
-- Adding examples, docs, fixing small issues [\#1](https://github.com/nanoframework/nanoFramework.System.Text.RegularExpressions/pull/1)
+- Adding examples, docs, fixing small issues [\#1](https://github.com/nanoframework/System.Text.RegularExpressions/pull/1)
 
-## [v1.0.0-preview.22](https://github.com/nanoframework/nanoFramework.System.Text.RegularExpressions/tree/v1.0.0-preview.22) (2021-03-30)
+## [v1.0.0-preview.22](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.0-preview.22) (2021-03-30)
 
-[Full Changelog](https://github.com/nanoframework/nanoFramework.System.Text.RegularExpressions/compare/v1.0.0-preview.21...v1.0.0-preview.22)
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.0-preview.21...v1.0.0-preview.22)
 
-## [v1.0.0-preview.21](https://github.com/nanoframework/nanoFramework.System.Text.RegularExpressions/tree/v1.0.0-preview.21) (2021-03-26)
+## [v1.0.0-preview.21](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.0-preview.21) (2021-03-26)
 
-[Full Changelog](https://github.com/nanoframework/nanoFramework.System.Text.RegularExpressions/compare/6e0b179bce96fe18793c29bd647e224e52b64008...v1.0.0-preview.21)
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/6e0b179bce96fe18793c29bd647e224e52b64008...v1.0.0-preview.21)
 
 
 
