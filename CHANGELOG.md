@@ -1,8 +1,8 @@
 # Changelog
 
-## [v1.0.2](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.2) (2021-08-02)
+## [v1.0.3-preview.4](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.3-preview.4) (2021-08-02)
 
-[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.2...v1.0.2)
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.2...v1.0.3-preview.4)
 
 **Documentation and other chores:**
 
