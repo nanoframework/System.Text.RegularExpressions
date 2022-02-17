@@ -4,8 +4,7 @@
     <id>nanoFramework.System.Text.RegularExpressions</id>
     <version>$version$</version>
     <title>nanoFramework.System.Text.RegularExpressions</title>
-    <authors>.NET nanoFramework project contributors</authors>
-    <owners>nanoframework,dotnetfoundation</owners>
+    <authors>nanoFramework</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
     <releaseNotes>
@@ -17,7 +16,7 @@
     <repository type="git" url="https://github.com/nanoframework/System.Text.RegularExpressions" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
     <description>This package includes the System.Text assembly for .NET nanoFramework C# projects.</description>
-    <tags>nanoFramework C# csharp netmf netnf nanoFramework.System.Text.RegularExpressions</tags>
+    <tags>nanoFramework C# csharp netmf netnf regex</tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="1.11.7" />
       <dependency id="nanoFramework.System.Collections" version="1.3.0" />
