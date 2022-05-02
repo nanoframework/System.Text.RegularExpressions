@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>nanoFramework.System.Text.RegularExpressions</id>
@@ -18,8 +18,8 @@
     <description>This package includes the System.Text assembly for .NET nanoFramework C# projects.</description>
     <tags>nanoFramework C# csharp netmf netnf regex</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.11.7" />
-      <dependency id="nanoFramework.System.Collections" version="1.3.0" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.12.0" />
+      <dependency id="nanoFramework.System.Collections" version="1.4.0" />
       <dependency id="nanoFramework.System.Text" version="1.1.3" />
     </dependencies>
   </metadata>
