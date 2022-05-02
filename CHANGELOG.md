@@ -1,5 +1,30 @@
 # Changelog
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Text.RegularExpressions/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.5-preview.3...HEAD)
+
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#18](https://github.com/nanoframework/System.Text.RegularExpressions/pull/18)
+- release-v1.0.5 [\#16](https://github.com/nanoframework/System.Text.RegularExpressions/pull/16)
+
+## [v1.0.5-preview.3](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.5-preview.3) (2022-01-04)
+
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.4...v1.0.5-preview.3)
+
+**Documentation and other chores:**
+
+- Update 1 nuget dependencies [\#15](https://github.com/nanoframework/System.Text.RegularExpressions/pull/15)
+
+## [v1.0.4](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.4) (2021-12-03)
+
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.4-preview.16...v1.0.4)
+
+**Documentation and other chores:**
+
+- release-v1.0.4 [\#14](https://github.com/nanoframework/System.Text.RegularExpressions/pull/14)
+
 ## [v1.0.4-preview.16](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.4-preview.16) (2021-12-03)
 
 [Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.4-preview.14...v1.0.4-preview.16)
@@ -61,6 +86,10 @@
 ## [v1.0.2](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.2) (2021-07-16)
 
 [Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.0.0-preview.33...v1.0.2)
+
+**Documentation and other chores:**
+
+- release-v1.0.2 [\#3](https://github.com/nanoframework/System.Text.RegularExpressions/pull/3)
 
 ## [v1.0.0-preview.33](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.0.0-preview.33) (2021-07-16)
 
