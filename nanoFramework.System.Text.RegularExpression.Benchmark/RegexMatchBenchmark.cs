@@ -1,4 +1,10 @@
-﻿using nanoFramework.Benchmark;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// Portions Copyright (c) Microsoft Corporation.  All rights reserved.
+// See LICENSE file in the project root for full license information.
+//
+
+using nanoFramework.Benchmark;
 using nanoFramework.Benchmark.Attributes;
 using System.Diagnostics;
 using System.Text;
