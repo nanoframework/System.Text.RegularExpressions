@@ -50,7 +50,7 @@ steps:
   parameters:
     sonarCloudProject: 'nanoframework_lib-nanoFramework.System.Text.RegularExpressions'
     runUnitTests: true
-    unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestRegex\nano.runsettings'
+    unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
 
 # step from template @ nf-tools repo
 # report error
