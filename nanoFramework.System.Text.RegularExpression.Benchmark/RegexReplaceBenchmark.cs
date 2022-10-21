@@ -10,9 +10,9 @@ namespace nanoFramework.System.Text.RegularExpression.Benchmark
     [ConsoleParser]
     [IterationCount(100)]
     public class RegexReplaceBenchmark { 
-        private string _input;
-        private string _input10x;
-        private Regex _regex;
+        private readonly string _input;
+        private readonly string _input10x;
+        private readonly Regex _regex;
 
         public RegexReplaceBenchmark()
         {
@@ -33,22 +33,25 @@ namespace nanoFramework.System.Text.RegularExpression.Benchmark
         [Benchmark]
         public void Regex_Replace()
         {
-            var test = _regex.Replace(_input, "replacement");
+            _ = _regex.Replace(_input, "replacement");
         }
+
         [Benchmark]
         public void Regex_Replace_LargerInput()
         {
-            var test = _regex.Replace(_input10x, "replacement");
+            _ = _regex.Replace(_input10x, "replacement");
         }
+
         [Benchmark]
         public void Regex_Replace_LargerInput_MaxOccurrences1()
         {
-            var test = _regex.Replace(_input10x, "replacement", 1, 0);
+            _ = _regex.Replace(_input10x, "replacement", 1, 0);
         }
+
         [Benchmark]
         public void Regex_Replace_LargerInput_MaxOccurrences5()
         {
-            var test = _regex.Replace(_input10x, "replacement", 5, 0);
+            _ = _regex.Replace(_input10x, "replacement", 5, 0);
         }
     }
 }

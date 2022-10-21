@@ -45,8 +45,8 @@ namespace nanoFramework.System.Text.RegularExpression.Benchmark
 
     public abstract class RegexBenchmarkBase
     {
-        private string _input;
-        private string _input1000x;
+        private readonly string _input;
+        private readonly string _input1000x;
 
         public RegexBenchmarkBase()
         {
@@ -66,52 +66,52 @@ namespace nanoFramework.System.Text.RegularExpression.Benchmark
         [Benchmark]
         public void Regex_Match()
         {
-            var test = MethodToBenchmark(_input, "test");
+            _ = MethodToBenchmark(_input, "test");
         }
         [Benchmark]
         public void Regex_Match_LargerInput()
         {
-            var test = MethodToBenchmark(_input1000x, "test");
+            _ = MethodToBenchmark(_input1000x, "test");
         }
         [Benchmark]
         public void Regex_Match_LongerPattern()
         {
-            var test = MethodToBenchmark(_input, "This is a test");
+            _ = MethodToBenchmark(_input, "This is a test");
         }
         [Benchmark]
         public void Regex_Match_ShorterPattern()
         {
-            var test = MethodToBenchmark(_input, "s");
+            _ = MethodToBenchmark(_input, "s");
         }
         [Benchmark]
         public void Regex_Match_100xInput_WhitespaceInPattern()
         {
-            var test = MethodToBenchmark(_input, @"\sa\s");
+            _ = MethodToBenchmark(_input, @"\sa\s");
         }
         [Benchmark]
         public void Regex_Match_100xInput_WordInPattern()
         {
-            var test = MethodToBenchmark(_input, @"\w");
+            _ = MethodToBenchmark(_input, @"\w");
         }
         [Benchmark]
         public void Regex_Match_100xInput_WildcardInPattern()
         {
-            var test = MethodToBenchmark(_input, @".s");
+            _ = MethodToBenchmark(_input, @".s");
         }
         [Benchmark]
         public void Regex_Match_IgnoreCase()
         {
-            var test = MethodToBenchmark(_input, "Test", RegexOptions.IgnoreCase);
+            _ = MethodToBenchmark(_input, "Test", RegexOptions.IgnoreCase);
         }
         [Benchmark]
         public void Regex_Match_Multiline()
         {
-            var test = MethodToBenchmark(_input, "Test", RegexOptions.Multiline);
+            _ = MethodToBenchmark(_input, "Test", RegexOptions.Multiline);
         }
         [Benchmark]
         public void Regex_Match_IgnorePatternWhitespace()
         {
-            var test = MethodToBenchmark(_input, "Test", RegexOptions.IgnorePatternWhitespace);
+            _ = MethodToBenchmark(_input, "Test", RegexOptions.IgnorePatternWhitespace);
         }
     }
 }
