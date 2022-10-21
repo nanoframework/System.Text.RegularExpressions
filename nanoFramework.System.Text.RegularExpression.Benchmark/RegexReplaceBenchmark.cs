@@ -15,14 +15,15 @@ namespace nanoFramework.System.Text.RegularExpression.Benchmark
     [DebugLogger]
     [ConsoleParser]
     [IterationCount(100)]
-    public class RegexReplaceBenchmark { 
+    public class RegexReplaceBenchmark
+    {
         private readonly string _input;
         private readonly string _input10x;
         private readonly Regex _regex;
 
         public RegexReplaceBenchmark()
         {
-            Debug.WriteLine($"\n\nStarting { this.GetType().Name }...");
+            Debug.WriteLine($"\n\nStarting {this.GetType().Name}...");
 
             _input = "This is a test. ";
             var builder = new StringBuilder();

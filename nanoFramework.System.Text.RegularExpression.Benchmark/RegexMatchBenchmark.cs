@@ -56,7 +56,7 @@ namespace nanoFramework.System.Text.RegularExpression.Benchmark
 
         public RegexBenchmarkBase()
         {
-            Debug.WriteLine($"\n\nStarting { this.GetType().Name }...");
+            Debug.WriteLine($"\n\nStarting {this.GetType().Name}...");
 
             _input = "This is a test. ";
             var builder = new StringBuilder();
@@ -74,46 +74,55 @@ namespace nanoFramework.System.Text.RegularExpression.Benchmark
         {
             _ = MethodToBenchmark(_input, "test");
         }
+
         [Benchmark]
         public void Regex_Match_LargerInput()
         {
             _ = MethodToBenchmark(_input1000x, "test");
         }
+
         [Benchmark]
         public void Regex_Match_LongerPattern()
         {
             _ = MethodToBenchmark(_input, "This is a test");
         }
+
         [Benchmark]
         public void Regex_Match_ShorterPattern()
         {
             _ = MethodToBenchmark(_input, "s");
         }
+
         [Benchmark]
         public void Regex_Match_100xInput_WhitespaceInPattern()
         {
             _ = MethodToBenchmark(_input, @"\sa\s");
         }
+
         [Benchmark]
         public void Regex_Match_100xInput_WordInPattern()
         {
             _ = MethodToBenchmark(_input, @"\w");
         }
+
         [Benchmark]
         public void Regex_Match_100xInput_WildcardInPattern()
         {
             _ = MethodToBenchmark(_input, @".s");
         }
+
         [Benchmark]
         public void Regex_Match_IgnoreCase()
         {
             _ = MethodToBenchmark(_input, "Test", RegexOptions.IgnoreCase);
         }
+
         [Benchmark]
         public void Regex_Match_Multiline()
         {
             _ = MethodToBenchmark(_input, "Test", RegexOptions.Multiline);
         }
+
         [Benchmark]
         public void Regex_Match_IgnorePatternWhitespace()
         {
