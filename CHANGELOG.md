@@ -2,7 +2,17 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Text.RegularExpressions/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.1.9...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.1.14...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#30](https://github.com/nanoframework/System.Text.RegularExpressions/pull/30)
+- Added regex benchmarks [\#28](https://github.com/nanoframework/System.Text.RegularExpressions/pull/28)
+- Update 1 NuGet dependencies [\#27](https://github.com/nanoframework/System.Text.RegularExpressions/pull/27)
+
+## [v1.1.14](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.1.14) (2022-09-16)
+
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.1.9...v1.1.14)
 
 **Documentation and other chores:**
 
