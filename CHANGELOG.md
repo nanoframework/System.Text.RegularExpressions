@@ -2,7 +2,22 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Text.RegularExpressions/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.1.24...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.1.26...HEAD)
+
+**Documentation and other chores:**
+
+- Update 8 NuGet dependencies [\#45](https://github.com/nanoframework/System.Text.RegularExpressions/pull/45)
+- Update 1 NuGet dependencies [\#42](https://github.com/nanoframework/System.Text.RegularExpressions/pull/42)
+- Update 1 NuGet dependencies [\#41](https://github.com/nanoframework/System.Text.RegularExpressions/pull/41)
+- Update 1 NuGet dependencies [\#40](https://github.com/nanoframework/System.Text.RegularExpressions/pull/40)
+- Update 1 NuGet dependencies [\#39](https://github.com/nanoframework/System.Text.RegularExpressions/pull/39)
+- Update 2 NuGet dependencies [\#38](https://github.com/nanoframework/System.Text.RegularExpressions/pull/38)
+- Update 3 NuGet dependencies [\#37](https://github.com/nanoframework/System.Text.RegularExpressions/pull/37)
+- Update 2 NuGet dependencies [\#35](https://github.com/nanoframework/System.Text.RegularExpressions/pull/35)
+
+## [v1.1.26](https://github.com/nanoframework/System.Text.RegularExpressions/tree/v1.1.26) (2022-10-26)
+
+[Full Changelog](https://github.com/nanoframework/System.Text.RegularExpressions/compare/v1.1.24...v1.1.26)
 
 **Documentation and other chores:**
 
