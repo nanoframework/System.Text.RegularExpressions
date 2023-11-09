@@ -18,8 +18,8 @@
     <description>This package includes the System.Text assembly for .NET nanoFramework C# projects.</description>
     <tags>nanoFramework C# csharp netmf netnf regex</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.14.2" />
-      <dependency id="nanoFramework.System.Collections" version="1.5.18" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.15.5" />
+      <dependency id="nanoFramework.System.Collections" version="1.5.31" />
       <dependency id="nanoFramework.System.Text" version="1.2.37" />
     </dependencies>
   </metadata>
