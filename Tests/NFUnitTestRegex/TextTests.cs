@@ -60,9 +60,9 @@ namespace NFUnitTestRegex
                         Debug.WriteLine("      Capture " + captureCtr + ": " + group.Captures[captureCtr].Value);
                 }
             }
-            Assert.Equal(results.Count, 2);
-            Assert.Equal(results[0].Groups.Count, 3);
-            Assert.Equal(results[1].Groups.Count, 3);
+            Assert.AreEqual(results.Count, 2);
+            Assert.AreEqual(results[0].Groups.Count, 3);
+            Assert.AreEqual(results[1].Groups.Count, 3);
         }
 
         [TestMethod]
@@ -102,12 +102,12 @@ namespace NFUnitTestRegex
             }
 
             //Verify Results
-            Assert.Equal(match.Captures.Count, expectedCaptures);
-            Assert.Equal(match.Captures[0].ToString(), "The ");
-            Assert.Equal(match.Groups.Count, expectedGroups);
-            Assert.Equal(match.Groups[0].Captures.Count, Group0ExpectedCount);
-            Assert.Equal(match.Groups[0].ToString(), "The ");
-            Assert.Equal(match.Groups[0].Captures[0].ToString(), "The ");
+            Assert.AreEqual(match.Captures.Count, expectedCaptures);
+            Assert.AreEqual(match.Captures[0].ToString(), "The ");
+            Assert.AreEqual(match.Groups.Count, expectedGroups);
+            Assert.AreEqual(match.Groups[0].Captures.Count, Group0ExpectedCount);
+            Assert.AreEqual(match.Groups[0].ToString(), "The ");
+            Assert.AreEqual(match.Groups[0].Captures[0].ToString(), "The ");
         }
 
         [TestMethod]
@@ -162,11 +162,11 @@ namespace NFUnitTestRegex
             }
 
             //Verify Results
-            Assert.Equal(match.Captures.Count, expectedCaptures);
-            Assert.Equal(match.Groups.Count, expectedGroups);
-            Assert.Equal(match.Groups[0].ToString(), "The young, hairy, and tall dog slowly walked across the yard.");
-            Assert.Equal(match.Captures[0].ToString(), "The young, hairy, and tall dog slowly walked across the yard.");
-            Assert.Equal(match.Groups[1].ToString(), "yard.");
+            Assert.AreEqual(match.Captures.Count, expectedCaptures);
+            Assert.AreEqual(match.Groups.Count, expectedGroups);
+            Assert.AreEqual(match.Groups[0].ToString(), "The young, hairy, and tall dog slowly walked across the yard.");
+            Assert.AreEqual(match.Captures[0].ToString(), "The young, hairy, and tall dog slowly walked across the yard.");
+            Assert.AreEqual(match.Groups[1].ToString(), "yard.");
         }
     }
 }

@@ -27,7 +27,7 @@ namespace NFUnitTestRegex
             acutalResults = regex.Split("xyzzyababbayyzabbbab123");
             for (int i = 0; i < acutalResults.Length; i++)
             {
-                Assert.Equal(expectedResults[i], acutalResults[i]);
+                Assert.AreEqual(expectedResults[i], acutalResults[i]);
             }
 
             expectedResults = new string[] { "xxxx", "xxxx", "yyyy", "zzz" };
@@ -35,7 +35,7 @@ namespace NFUnitTestRegex
             acutalResults = regex.Split("xxxxaabxxxxbyyyyaaabzzz");
             for (int i = 0; i < acutalResults.Length; i++)
             {
-                Assert.Equal(expectedResults[i], acutalResults[i]);
+                Assert.AreEqual(expectedResults[i], acutalResults[i]);
             }
 
             // Grep Tests
@@ -62,12 +62,12 @@ namespace NFUnitTestRegex
 
             int al = acutalResults.Length;
             int el = expectedResults.Length;
-            Assert.Equal(al, el); Assert.Equal(al, el);
+            Assert.AreEqual(al, el); Assert.AreEqual(al, el);
 
             for (int i = 0; i < el; i++)
             {
                 Debug.WriteLine("Actual[" + i + "] = " + acutalResults[i]);
-                Assert.Equal(expectedResults[i], acutalResults[i]);
+                Assert.AreEqual(expectedResults[i], acutalResults[i]);
             }
         }
     }

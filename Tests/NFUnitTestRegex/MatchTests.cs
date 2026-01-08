@@ -39,9 +39,9 @@ namespace NFUnitTestRegex
                 ++matchCount;
             }
 
-            Assert.Equal(matchCount, 3);
-            Assert.Equal(expected0, "Console.Write");
-            Assert.Equal(expected1, "Console.WriteLine");
+            Assert.AreEqual(matchCount, 3);
+            Assert.AreEqual(expected0, "Console.Write");
+            Assert.AreEqual(expected1, "Console.WriteLine");
         }
 
         [TestMethod]
@@ -102,10 +102,10 @@ namespace NFUnitTestRegex
             //    Debug.WriteLine("'" + groups["word"].Value + "'" + " repeated at positions " + groups[0].Index + " and " + groups[1].Index);
             //}
 
-            //Assert.Equal(matches.Count, 3);
-            //Assert.Equal(matches[0].Value, "The");
-            //Assert.Equal(matches[1].Value, "fox");
-            //Assert.Equal(matches[2].Value, "dog");
+            //Assert.AreEqual(matches.Count, 3);
+            //Assert.AreEqual(matches[0].Value, "The");
+            //Assert.AreEqual(matches[1].Value, "fox");
+            //Assert.AreEqual(matches[2].Value, "dog");
         }
 
         [TestMethod]

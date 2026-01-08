@@ -27,10 +27,10 @@ namespace NFUnitTestRegex
                 foreach (Match match in matches)
                 {
                     Debug.WriteLine($"Email found: {match}");
-                    Assert.Equal(text, match.ToString());
+                    Assert.AreEqual(text, match.ToString());
                 }
 
-                Assert.Equal(1, matches.Count);
+                Assert.AreEqual(1, matches.Count);
             }
         }
 
@@ -48,7 +48,7 @@ namespace NFUnitTestRegex
                 Debug.WriteLine($"Email found: {match}");
             }
 
-            Assert.Equal(4, matches.Count);
+            Assert.AreEqual(4, matches.Count);
         }
 
         [TestMethod]
@@ -65,10 +65,10 @@ namespace NFUnitTestRegex
                 foreach (Match match in matches)
                 {
                     Debug.WriteLine($"URL found: {match}");
-                    Assert.Equal(text, match.ToString());
+                    Assert.AreEqual(text, match.ToString());
                 }
 
-                Assert.Equal(1, matches.Count);
+                Assert.AreEqual(1, matches.Count);
             }
         }
 
@@ -87,10 +87,10 @@ namespace NFUnitTestRegex
             foreach (Match match in matches)
             {
                 Debug.WriteLine($"URL found: {match}");
-                Assert.Equal(emails[idx++], match.ToString());
+                Assert.AreEqual(emails[idx++], match.ToString());
             }
 
-            Assert.Equal(4, matches.Count);
+            Assert.AreEqual(4, matches.Count);
         }
 
         [TestMethod]
@@ -100,9 +100,9 @@ namespace NFUnitTestRegex
             string validMD5 = "36e8b0061e35a148375d0595492de11f";
             string text = $"This is a valid MD5 hash betwwen a Z and Q: Z{validMD5}Q";
             Match match = Regex.Match(text, pattern);            
-            Assert.True(match.Success);
+            Assert.IsTrue(match.Success);
             Debug.WriteLine($"MD5 Found: {match}");
-            Assert.Equal(validMD5, match.ToString());
+            Assert.AreEqual(validMD5, match.ToString());
         }
 
         [TestMethod]
@@ -112,9 +112,9 @@ namespace NFUnitTestRegex
             string Sha256 = "196A8e96Eb8894811f22e7c696BB8D4BB2B57c1E0da3dA69cDC10Bc5899BaB73";
             string text = $"A valid MD5 hash will be extracted: Z{Sha256}Q";
             Match match = Regex.Match(text, pattern);            
-            Assert.True(match.Success);
+            Assert.IsTrue(match.Success);
             Debug.WriteLine($"SHA256 Found: {match}");
-            Assert.Equal(Sha256, match.ToString());
+            Assert.AreEqual(Sha256, match.ToString());
         }
 
         [TestMethod]
@@ -124,9 +124,9 @@ namespace NFUnitTestRegex
             string xml = "<tag>something here</tag>";
             string text = $"This is a valid XML tag between a Z and Q: Z{xml}Q";
             Match match = Regex.Match(text, pattern);            
-            Assert.True(match.Success);
+            Assert.IsTrue(match.Success);
             Debug.WriteLine($"XML tag Found: {match}");
-            Assert.Equal(xml, match.ToString());
+            Assert.AreEqual(xml, match.ToString());
         }
         
         [TestMethod]
@@ -136,16 +136,16 @@ namespace NFUnitTestRegex
             string guid = "123e4567-e89b-12d3-a456-9AC7CBDCEE52";
             string text = $"This is a valid guid between a Z and Q: Z{guid}Q";
             Match match = Regex.Match(text, pattern);            
-            Assert.True(match.Success);
+            Assert.IsTrue(match.Success);
             Debug.WriteLine($"GUID Found: {match}");
-            Assert.Equal(guid, match.ToString());
+            Assert.AreEqual(guid, match.ToString());
             
             guid = "{123e4567-e89b-12d3-a456-9AC7CBDCEE52}";
             text = $"This is a valid guid tag: Z{guid}Q";
             match = Regex.Match(text, pattern);            
-            Assert.True(match.Success);
+            Assert.IsTrue(match.Success);
             Debug.WriteLine($"GUID Found: {match}");
-            Assert.Equal(guid, match.ToString());
+            Assert.AreEqual(guid, match.ToString());
         }        
 
         [TestMethod]
@@ -155,9 +155,9 @@ namespace NFUnitTestRegex
             string datetime = "2021-04-10 18:08:42";
             string text = $"A valid date time will be extracted: bla{datetime}234";
             Match match = Regex.Match(text, pattern);            
-            Assert.True(match.Success);
+            Assert.IsTrue(match.Success);
             Debug.WriteLine($"DateTime Found: {match}");
-            Assert.Equal(datetime, match.ToString());
+            Assert.AreEqual(datetime, match.ToString());
         }
     }
 }

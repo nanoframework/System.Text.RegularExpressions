@@ -22,21 +22,21 @@ namespace NFUnitTestRegex
             Debug.WriteLine("RegexOptions.IgnoreCase abc(\\w*)");
             regex.Options = RegexOptions.IgnoreCase;
             Debug.WriteLine("abc(d*)");
-            Assert.True(regex.IsMatch("abcddd"));
+            Assert.IsTrue(regex.IsMatch("abcddd"));
             Debug.WriteLine("abcddd = true");
-            Assert.True(regex.IsMatch("aBcDDdd"));
+            Assert.IsTrue(regex.IsMatch("aBcDDdd"));
             Debug.WriteLine("aBcDDdd = true");
-            Assert.True(regex.IsMatch("ABCDDDDD"));
+            Assert.IsTrue(regex.IsMatch("ABCDDDDD"));
             Debug.WriteLine("ABCDDDDD = true");
 
             regex = new Regex("(A*)b\\1");
             regex.Options = RegexOptions.IgnoreCase;
-            Assert.True(regex.IsMatch("AaAaaaBAAAAAA"));
+            Assert.IsTrue(regex.IsMatch("AaAaaaBAAAAAA"));
             Debug.WriteLine("AaAaaaBAAAAAA = true");
 
             regex = new Regex("[A-Z]*");
             regex.Options = RegexOptions.IgnoreCase;
-            Assert.True(regex.IsMatch("CaBgDe12"));
+            Assert.IsTrue(regex.IsMatch("CaBgDe12"));
             Debug.WriteLine("CaBgDe12 = true");
         }
 
@@ -55,12 +55,12 @@ namespace NFUnitTestRegex
             Regex regex;
             Debug.WriteLine("Test RE.MATCH_MULTILINE. Test for eol/bol symbols.");
             regex = new Regex("^abc$", RegexOptions.Multiline);
-            Assert.True(regex.IsMatch("\nabc"));
-            Assert.True(regex.IsMatch("\rabc"));
-            Assert.True(regex.IsMatch("\r\nabc"));
-            Assert.True(regex.IsMatch("\u0085abc"));
-            Assert.True(regex.IsMatch("\u2028abc"));
-            Assert.True(regex.IsMatch("\u2029abc"));
+            Assert.IsTrue(regex.IsMatch("\nabc"));
+            Assert.IsTrue(regex.IsMatch("\rabc"));
+            Assert.IsTrue(regex.IsMatch("\r\nabc"));
+            Assert.IsTrue(regex.IsMatch("\u0085abc"));
+            Assert.IsTrue(regex.IsMatch("\u2028abc"));
+            Assert.IsTrue(regex.IsMatch("\u2029abc"));
 
             Debug.WriteLine("Test RE.MATCH_MULTILINE. Test that '.' does not matches new line.");
             regex = new Regex("^a.*b$", RegexOptions.Multiline);

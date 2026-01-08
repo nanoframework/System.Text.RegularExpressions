@@ -48,10 +48,10 @@ namespace NFUnitTestRegex
                 }
             }
 
-            Assert.Equal(match.Groups.Count, 3);
-            Assert.Equal(match.Groups[0].ToString(), "This is one sentence.");
-            Assert.Equal(match.Groups[1].ToString(), "sentence");
-            Assert.Equal(match.Groups[2].ToString(), "sentence");
+            Assert.AreEqual(match.Groups.Count, 3);
+            Assert.AreEqual(match.Groups[0].ToString(), "This is one sentence.");
+            Assert.AreEqual(match.Groups[1].ToString(), "sentence");
+            Assert.AreEqual(match.Groups[2].ToString(), "sentence");
         }
 
         [TestMethod]
@@ -84,13 +84,13 @@ namespace NFUnitTestRegex
 
             Debug.WriteLine("Found " + matches.Count + " trademarks or registered trademarks.");
 
-            Assert.Equal(matches.Count, expectedCount);
-            Assert.Equal(matches[0].ToString(), "Microsoft®");
-            Assert.Equal(matches[1].ToString(), "Excel®");
-            Assert.Equal(matches[2].ToString(), "Access®");
-            Assert.Equal(matches[3].ToString(), "Outlook®");
-            Assert.Equal(matches[4].ToString(), "PowerPoint®");
-            Assert.Equal(matches[5].ToString(), "Silverlight™");
+            Assert.AreEqual(matches.Count, expectedCount);
+            Assert.AreEqual(matches[0].ToString(), "Microsoft®");
+            Assert.AreEqual(matches[1].ToString(), "Excel®");
+            Assert.AreEqual(matches[2].ToString(), "Access®");
+            Assert.AreEqual(matches[3].ToString(), "Outlook®");
+            Assert.AreEqual(matches[4].ToString(), "PowerPoint®");
+            Assert.AreEqual(matches[5].ToString(), "Silverlight™");
         }
     }
 }
