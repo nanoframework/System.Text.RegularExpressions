@@ -64,7 +64,7 @@ namespace NFUnitTestRegex
                 Debug.WriteLine($"The pattern '{pattern}' was not found in '{input}'.");
             }
 
-            Assert.False(match.Success);
+            Assert.IsFalse(match.Success);
         }
 
         [TestMethod]

@@ -46,7 +46,7 @@ namespace NFUnitTestRegex
             Regex regex;
             Debug.WriteLine("Test for eol/bol symbols.");
             regex = new Regex("^abc$");
-            Assert.False(regex.IsMatch("\nabc"));
+            Assert.IsFalse(regex.IsMatch("\nabc"));
         }
 
         [TestMethod]
@@ -64,12 +64,12 @@ namespace NFUnitTestRegex
 
             Debug.WriteLine("Test RE.MATCH_MULTILINE. Test that '.' does not matches new line.");
             regex = new Regex("^a.*b$", RegexOptions.Multiline);
-            Assert.False(regex.IsMatch("a\nb"));
-            Assert.False(regex.IsMatch("a\rb"));
-            Assert.False(regex.IsMatch("a\r\nb"));
-            Assert.False(regex.IsMatch("a\u0085b"));
-            Assert.False(regex.IsMatch("a\u2028b"));
-            Assert.False(regex.IsMatch("a\u2029b"));
+            Assert.IsFalse(regex.IsMatch("a\nb"));
+            Assert.IsFalse(regex.IsMatch("a\rb"));
+            Assert.IsFalse(regex.IsMatch("a\r\nb"));
+            Assert.IsFalse(regex.IsMatch("a\u0085b"));
+            Assert.IsFalse(regex.IsMatch("a\u2028b"));
+            Assert.IsFalse(regex.IsMatch("a\u2029b"));
         }
     }
 }
