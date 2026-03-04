@@ -18,20 +18,18 @@
     <description>This package includes the System.Text assembly for .NET nanoFramework C# projects.</description>
     <tags>nanoFramework C# csharp netmf netnf regex</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.35" />
-      <dependency id="nanoFramework.System.Collections" version="2.0.0-preview.8" />
-      <dependency id="nanoFramework.System.Text" version="2.0.0-preview.8" />
+      <group targetFramework=".NETnanoFramework1.0">
+        <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.35" />
+        <dependency id="nanoFramework.System.Collections" version="2.0.0-preview.8" />
+        <dependency id="nanoFramework.System.Text" version="2.0.0-preview.8" />
+      </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.dll" target="lib\System.Text.RegularExpressions.dll" />
-    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pdb" target="lib\System.Text.RegularExpressions.pdb" />
-    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pdbx" target="lib\System.Text.RegularExpressions.pdbx" />
-    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.pe" target="lib\System.Text.RegularExpressions.pe" />
-    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.xml" target="lib\System.Text.RegularExpressions.xml" />
-    <file src="assets\readme.txt" target="" />
     <file src="README.md" target="docs\" />
-    <file src="assets\nf-logo.png" target="images" />
+    <file src="assets\readme.txt" target="" />
     <file src="LICENSE.md" target="" />
+    <file src="assets\nf-logo.png" target="images" />
+    <file src="nanoFramework.System.Text.RegularExpressions\bin\Release\System.Text.RegularExpressions.*" target="lib\netnano1.0" />
   </files>
 </package>
